@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "549128991668",
+    "project_id": "opchallenge-3b7d3",
+    "storage_bucket": "opchallenge-3b7d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549128991668:android:91d2fbc8cae068058af8e1",
+        "android_client_info": {
+          "package_name": "com.c4pn91.opchallenge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLQUGDhBwjtMibXM7QId-OJjPSgsL3xCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

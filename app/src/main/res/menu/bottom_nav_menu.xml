@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/personFragment"
+        android:enabled="true"
+        android:icon="@drawable/round_person_24"
+        android:title="Persona" />
+
+    <item
+        android:id="@+id/moviesFragment"
+        android:enabled="true"
+        android:icon="@drawable/round_local_movies_24"
+        android:title="Películas" />
+
+    <item
+        android:id="@+id/mapFragment"
+        android:enabled="true"
+        android:icon="@drawable/round_map_24"
+        android:title="Mapa" />
+
+    <item
+        android:id="@+id/photoFragment"
+        android:enabled="true"
+        android:icon="@drawable/round_photo_camera_24"
+        android:title="Fotos" />
+</menu>

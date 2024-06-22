@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/personFragment">
+
+    <fragment
+        android:id="@+id/personFragment"
+        android:name="com.c4pn91.opchallenge.presentation.view.person.PersonFragment"
+        android:label="First Fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.c4pn91.opchallenge.presentation.view.movies.MoviesFragment"
+        android:label="Second Fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.c4pn91.opchallenge.presentation.view.map.MapFragment"
+        android:label="Third Fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="com.c4pn91.opchallenge.presentation.view.photo.PhotoFragment"
+        android:label="Fourth Fragment" />
+
+</navigation>
