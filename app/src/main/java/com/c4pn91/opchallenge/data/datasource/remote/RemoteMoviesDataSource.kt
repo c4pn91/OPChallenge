@@ -24,4 +24,36 @@ class RemoteMoviesDataSource @Inject constructor(private val apiClient: MoviesAp
             throw error
         }
     }
+
+    @Throws(Exception::class)
+    suspend fun getTopRatedMoviesFromApi(): List<MoviesDTO>? {
+        return try {
+            val response: Response<MoviesResponseDTO> = apiClient.getTopRatedMovies()
+            val listResponse: List<MoviesDTO> = response.body()?.movies ?: emptyList()
+
+            if (response.isSuccessful && listResponse.isNotEmpty()) {
+                listResponse
+            } else {
+                throw Exception(response.message())
+            }
+        } catch (error: Exception) {
+            throw error
+        }
+    }
+
+    @Throws(Exception::class)
+    suspend fun getUpcomingMoviesFromApi(): List<MoviesDTO>? {
+        return try {
+            val response: Response<MoviesResponseDTO> = apiClient.getUpcomingMovies()
+            val listResponse: List<MoviesDTO> = response.body()?.movies ?: emptyList()
+
+            if (response.isSuccessful && listResponse.isNotEmpty()) {
+                listResponse
+            } else {
+                throw Exception(response.message())
+            }
+        } catch (error: Exception) {
+            throw error
+        }
+    }
 }

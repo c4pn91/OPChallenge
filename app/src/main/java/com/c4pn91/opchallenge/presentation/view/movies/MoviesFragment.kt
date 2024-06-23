@@ -51,7 +51,7 @@ class MoviesFragment : Fragment() {
             when (position) {
                 0 -> tab.setText("Populares")
                 1 -> tab.setText("Más Votadas")
-                2 -> tab.setText("Recomendadas")
+                2 -> tab.setText("Próximamente")
             }
         }.attach()
     }

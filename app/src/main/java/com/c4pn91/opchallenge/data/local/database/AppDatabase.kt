@@ -4,6 +4,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.c4pn91.opchallenge.data.local.dao.PersonDao
 import com.c4pn91.opchallenge.data.local.dao.PopularMoviesDao
+import com.c4pn91.opchallenge.data.local.dao.TopRatedMoviesDao
+import com.c4pn91.opchallenge.data.local.dao.UpcomingMoviesDao
 import com.c4pn91.opchallenge.data.local.entitie.KnownForEntity
 import com.c4pn91.opchallenge.data.local.entitie.PersonEntity
 import com.c4pn91.opchallenge.data.local.entitie.PopularMoviesEntity
@@ -27,4 +29,6 @@ const val CURRENT_DATABASE_VERSION = VERSION_1
 abstract class AppDatabase : RoomDatabase() {
     abstract fun personDao(): PersonDao
     abstract fun popularMoviesDao(): PopularMoviesDao
+    abstract fun topRatedMoviesDao(): TopRatedMoviesDao
+    abstract fun upcomingMoviesDao(): UpcomingMoviesDao
 }

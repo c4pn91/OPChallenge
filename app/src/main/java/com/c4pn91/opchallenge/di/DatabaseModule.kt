@@ -29,4 +29,12 @@ object DatabaseModule {
     @Provides
     fun providePopularMoviesDao(db: AppDatabase) = db.popularMoviesDao()
 
+    @Singleton
+    @Provides
+    fun provideTopRatedMoviesDao(db: AppDatabase) = db.topRatedMoviesDao()
+
+    @Singleton
+    @Provides
+    fun provideUpcomingMoviesDao(db: AppDatabase) = db.upcomingMoviesDao()
+
 }

@@ -27,7 +27,7 @@ class MoviesRepositoryImpl @Inject constructor(
         } catch (error: Exception) {
             val result = getPopularMoviesFromDb()
             if(result.isSuccess) return result
-            Result.failure(Throwable(error.message ?: "Movies not found"))
+            Result.failure(Throwable(error.message ?: "Películas no encontradas"))
         }
     }
 
@@ -35,34 +35,46 @@ class MoviesRepositoryImpl @Inject constructor(
         return localMovieDataSource.getPopularMoviesFromDb()
     }
 
-    /*suspend fun getTopRatedMovies() : Result<List<Movie>> {
-        try {
-            val resultMoviesFromApi : List<MoviesDTO> = moviesService.getMoviesFromApi()
-            if (resultMoviesFromApi.isNotEmpty()) {
-                moviesService.insertAllMovies(resultMoviesFromApi.map { it.toMovieEntity() })
-                val moviesApi = resultMoviesFromApi.map { it.toMovie() }
-                Result.success(moviesApi)
+    override suspend fun getTopRatedMovies() : Result<List<Movie>> {
+        return try {
+            val resultMoviesFromApi : List<MoviesDTO>? = remoteMovieDataSource.getTopRatedMoviesFromApi()
+            if (resultMoviesFromApi != null) {
+                localMovieDataSource.saveTopRatedMoviesToDb(resultMoviesFromApi)
+                val movies = resultMoviesFromApi.map { it.toMovie() }
+                Result.success(movies)
             } else {
-                getMovieFromDB("No se pudo obtener la lista de películas, intente de nuevo")
+                return getTopRatedMoviesFromDb()
             }
         } catch (error: Exception) {
-            getMovieFromDB(error.message ?: "Ocurrió un error desconocido")
+            val result = getTopRatedMoviesFromDb()
+            if(result.isSuccess) return result
+            Result.failure(Throwable(error.message ?: "Películas no encontradas"))
         }
     }
 
-    suspend fun getUpcomingMovies() : Result<List<Movie>> {
-        try {
-            val resultMoviesFromApi : List<MoviesDTO> = moviesService.getMoviesFromApi()
-            if (resultMoviesFromApi.isNotEmpty()) {
-                moviesService.insertAllMovies(resultMoviesFromApi.map { it.toMovieEntity() })
-                val moviesApi = resultMoviesFromApi.map { it.toMovie() }
-                Result.success(moviesApi)
+    private suspend fun getTopRatedMoviesFromDb() : Result<List<Movie>> {
+        return localMovieDataSource.getTopRatedMoviesFromDb()
+    }
+
+    override suspend fun getUpcomingMovies() : Result<List<Movie>> {
+        return try {
+            val resultMoviesFromApi : List<MoviesDTO>? = remoteMovieDataSource.getUpcomingMoviesFromApi()
+            if (resultMoviesFromApi != null) {
+                localMovieDataSource.saveUpcomingMoviesToDb(resultMoviesFromApi)
+                val movies = resultMoviesFromApi.map { it.toMovie() }
+                Result.success(movies)
             } else {
-                getMovieFromDB("No se pudo obtener la lista de películas, intente de nuevo")
+                return getUpcomingMoviesFromDb()
             }
         } catch (error: Exception) {
-            getMovieFromDB(error.message ?: "Ocurrió un error desconocido")
+            val result = getUpcomingMoviesFromDb()
+            if(result.isSuccess) return result
+            Result.failure(Throwable(error.message ?: "Películas no encontradas"))
         }
-    }*/
+    }
+
+    private suspend fun getUpcomingMoviesFromDb() : Result<List<Movie>> {
+        return localMovieDataSource.getUpcomingMoviesFromDb()
+    }
 
 }

@@ -26,7 +26,7 @@ class PersonRepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             val result = getPersonFromDb()
             if(result.isSuccess) return result
-            else Result.failure(Exception("Person not found, please check your connection and try again "))
+            else Result.failure(Exception("Persona no encontrada, por favor revise su conexión y vuelva a intentar"))
         }
     }
 

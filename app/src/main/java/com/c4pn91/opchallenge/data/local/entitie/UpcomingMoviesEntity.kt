@@ -3,6 +3,7 @@ package com.c4pn91.opchallenge.data.local.entitie
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.c4pn91.opchallenge.domain.model.Movie
 
 @Entity(tableName = "upcoming_movies")
 data class UpcomingMoviesEntity(
@@ -19,4 +20,19 @@ data class UpcomingMoviesEntity(
     @ColumnInfo("release_date"      ) var releaseDate      : String?        = null,
     @ColumnInfo("vote_average"      ) var voteAverage      : Double?        = null,
     @ColumnInfo("vote_count"        ) var voteCount        : Int?           = null
+)
+
+fun UpcomingMoviesEntity.toMovie() = Movie(
+    id = id,
+    backdropPath = backdropPath,
+    originalTitle = originalTitle,
+    overview = overview,
+    posterPath = posterPath,
+    adult = adult,
+    title = title,
+    originalLanguage = originalLanguage,
+    popularity = popularity,
+    releaseDate = releaseDate,
+    voteAverage = voteAverage,
+    voteCount = voteCount
 )

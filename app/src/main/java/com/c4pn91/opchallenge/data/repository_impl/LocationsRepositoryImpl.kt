@@ -18,10 +18,10 @@ class LocationsRepositoryImpl @Inject constructor(
                 val locations = resultLocations.map { it.toLocationItem() }
                 Result.success(locations)
             } else {
-                return Result.failure(Throwable("Locations are empty"))
+                return Result.failure(Throwable("Ubicaciones vacías"))
             }
         } catch (error: Exception) {
-            Result.failure(Throwable(error.message ?: "Error get locations"))
+            Result.failure(Throwable(error.message ?: "Error al obtener ubicaciones"))
         }
     }
 }
