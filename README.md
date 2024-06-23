@@ -50,3 +50,5 @@ No se dedicó mucho tiempo a la UI, perdón por eso.
 ![image_117](https://github.com/c4pn91/OPChallenge/assets/48338294/4eedc4e5-c3e5-4e8d-8890-3aeec5d3099a)
 ![image_118](https://github.com/c4pn91/OPChallenge/assets/48338294/85efdf66-4f9e-4327-82a3-fbac817f73f2)
 ![image_119](https://github.com/c4pn91/OPChallenge/assets/48338294/0b934546-e8e0-42aa-be36-cfffa9d3e6c0)
+![Captura de pantalla de 2024-06-22 23-24-51](https://github.com/c4pn91/OPChallenge/assets/48338294/7e67cc6c-0402-45b4-99c5-e502daec0361)
+![Captura de pantalla de 2024-06-22 23-33-48](https://github.com/c4pn91/OPChallenge/assets/48338294/97feeffc-4e1e-4e1f-b5d9-27b077057aa2)
