@@ -44,7 +44,6 @@ android {
 
 dependencies {
 
-    val splashScreenVersion = "1.0.1"
     val hiltVersion = "2.50"
     val retrofitVersion = "2.9.0"
     val interceptorVersion = "4.9.0"
@@ -62,9 +61,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // SplashScreen
-    implementation("androidx.core:core-splashscreen:$splashScreenVersion")
 
     // Dagger Hilt
     implementation("com.google.dagger:hilt-android:$hiltVersion")
@@ -111,4 +107,9 @@ dependencies {
 
     // Firebase Storage
     implementation("com.google.firebase:firebase-storage-ktx:19.2.1")
+
+    // Unit Testing
+    testImplementation("io.mockk:mockk:1.12.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2")
+    testImplementation("junit:junit:4.13.2")
 }
